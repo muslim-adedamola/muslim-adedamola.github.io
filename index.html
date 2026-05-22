@@ -183,6 +183,43 @@
     .pub-links { margin-top: 5px; display: flex; gap: 10px; }
     .pub-links a { font-size: 12.5px; color: var(--accent); font-weight: 500; }
 
+    /* ── Research Experience ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+    }
+    .exp-role {
+      font-size: 14.5px;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .exp-inst {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .exp-bullets {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 13px;
+      color: var(--faint);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .exp-date {
+      font-size: 12.5px;
+      color: var(--faint);
+      white-space: nowrap;
+    }
+
     /* ── Education ── */
     .edu-list { display: flex; flex-direction: column; gap: 1.2rem; }
     .edu-item {
@@ -264,7 +301,7 @@
   <header class="hero">
     <div>
       <h1 class="hero-name">Alaran Muslim<br>Adedamola</h1>
-      <p class="hero-title">PhD Student · Cyber-Physical Systems · Montanuniversität Leoben, Austria</p>
+      <p class="hero-title">Incoming PhD Student · Cyber-Physical Systems · Montanuniversität Leoben, Austria</p>
       <p class="hero-bio">
         I am an incoming PhD student at the <em>Chair of Cyber-Physical Systems</em> at Montanuniversität Leoben, supervised by
         <a href="https://cps.unileoben.ac.at/prof-elmar-rueckert/">Prof. Elmar Rückert</a>.
@@ -370,6 +407,62 @@
           Thesis: Attendance Monitoring System using RFID and Fingerprint</p>
         </div>
         <span class="edu-date">2015 – 2021</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section>
+    <h2 class="section-title">Research Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div>
+          <p class="exp-role">Researcher — AI for Robotics Lab</p>
+          <p class="exp-inst">University of Zagreb · Zagreb, Croatia</p>
+          <ul class="exp-bullets">
+            <li>Conducting research in embodied AI with a focus on manipulation.</li>
+            <li>Developed and deployed reinforcement and imitation learning policies on a Kinova Gen3 robot, integrating perception and control pipelines.</li>
+          </ul>
+        </div>
+        <span class="exp-date">Mar 2025 – present</span>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <p class="exp-role">Research Assistant — Robot Control and Learning Lab</p>
+          <p class="exp-inst">Nazarbayev University · Astana, Kazakhstan</p>
+          <ul class="exp-bullets">
+            <li>Conducted research on reinforcement learning applied to motion planning of a 7-DOF Kinova Gen3 robot in obstacle-filled environments.</li>
+            <li>Developed a safety-critical RL framework for human–robot collaboration, enforcing Speed and Separation Monitoring constraints within PPO-based motion planning.</li>
+          </ul>
+        </div>
+        <span class="exp-date">Aug 2024 – Feb 2025</span>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <p class="exp-role">Research Assistant — Institute of Smart Systems and Artificial Intelligence</p>
+          <p class="exp-inst">Nazarbayev University · Astana, Kazakhstan</p>
+          <ul class="exp-bullets">
+            <li>Created a synthetic dataset of 5.1 million images using NVIDIA Omniverse to improve object recognition models.</li>
+            <li>Collected hemispherical camera data and built a benchmark dataset of 1,000 fisheye images.</li>
+            <li>Trained YOLO models for object recognition in fisheye imagery.</li>
+          </ul>
+        </div>
+        <span class="exp-date">Jan 2023 – Jul 2024</span>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <p class="exp-role">Undergraduate Research Assistant</p>
+          <p class="exp-inst">Dept. of Electrical & Electronics Engineering, University of Ilorin · Nigeria</p>
+          <ul class="exp-bullets">
+            <li>Reviewed literature and contributed to the design of a multifactor student attendance system using fingerprint biometrics and RFID.</li>
+          </ul>
+        </div>
+        <span class="exp-date">Jan 2020 – Mar 2021</span>
       </div>
 
     </div>
