@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 232" role="img" aria-label="Illustration: a neural network feeding a medical cross and a heartbeat trace">
+  <rect width="340" height="232" fill="#f3f7fb"/>
+  <!-- network -->
+  <g stroke="#9db8d3" stroke-width="1.6">
+    <line x1="48" y1="56" x2="112" y2="86"/><line x1="48" y1="56" x2="112" y2="146"/>
+    <line x1="48" y1="116" x2="112" y2="86"/><line x1="48" y1="116" x2="112" y2="146"/>
+    <line x1="48" y1="176" x2="112" y2="86"/><line x1="48" y1="176" x2="112" y2="146"/>
+    <line x1="112" y1="86" x2="186" y2="116"/><line x1="112" y1="146" x2="186" y2="116"/>
+  </g>
+  <g fill="#ffffff" stroke="#2a5c8a" stroke-width="2.4">
+    <circle cx="48" cy="56" r="9"/><circle cx="48" cy="116" r="9"/><circle cx="48" cy="176" r="9"/>
+    <circle cx="112" cy="86" r="9"/><circle cx="112" cy="146" r="9"/>
+  </g>
+  <!-- medical cross -->
+  <g transform="translate(236 116)">
+    <circle r="58" fill="#e3f1e8"/>
+    <path d="M-12 -38h24a4 4 0 0 1 4 4v22h22a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4h-22v22a4 4 0 0 1-4 4h-24a4 4 0 0 1-4-4v-22h-22a4 4 0 0 1-4-4v-24a4 4 0 0 1 4-4h22v-22a4 4 0 0 1 4-4z" fill="#2a7a4a"/>
+  </g>
+  <line x1="186" y1="116" x2="196" y2="116" stroke="#9db8d3" stroke-width="1.6"/>
+  <!-- heartbeat -->
+  <polyline points="20,212 120,212 134,212 142,196 152,226 162,202 170,212 320,212" fill="none" stroke="#c0504d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
