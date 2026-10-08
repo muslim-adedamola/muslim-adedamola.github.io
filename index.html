@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alaran Muslim Adedamola</title>
+  <meta name="description" content="PhD student in robot learning at Montanuniversität Leoben, working on skill learning for humanoid robots." />
+  <meta name="author" content="Muslim A. Alaran" />
+  <link rel="canonical" href="https://muslim-adedamola.github.io/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Alaran Muslim Adedamola" />
+  <meta property="og:description" content="PhD student in robot learning at Montanuniversität Leoben, working on skill learning for humanoid robots." />
+  <meta property="og:url" content="https://muslim-adedamola.github.io/" />
+  <meta property="og:image" content="https://muslim-adedamola.github.io/photo.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,14 +25,38 @@
       --surface: #ffffff;
       --text: #1a1a18;
       --muted: #5a5a56;
-      --faint: #9a9a94;
+      --faint: #8a8a84;
       --accent: #2a5c8a;
       --accent-light: #e8f0f8;
+      --accent-border: #c5d8ed;
+      --accent-hover: #d8eaf8;
       --border: #e2e0da;
       --tag-bg: #eef3f8;
       --tag-text: #1e4a72;
-      --journal-dot: #2a7a4a;
-      --conf-dot: #2a5c8a;
+      --journal-bg: #e6f4ec;
+      --journal-text: #1a6636;
+      --journal-border: #b3ddc4;
+      --thumb-bg: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161615;
+        --surface: #1f1f1d;
+        --text: #ecebe6;
+        --muted: #b4b3ad;
+        --faint: #8d8c86;
+        --accent: #8cb8e4;
+        --accent-light: #1d2a37;
+        --accent-border: #2e4560;
+        --accent-hover: #24364a;
+        --border: #34332f;
+        --tag-bg: #1d2a37;
+        --tag-text: #a9cbee;
+        --journal-bg: #19301f;
+        --journal-text: #9ad3ad;
+        --journal-border: #2b5236;
+        --thumb-bg: #f4f3ef;
+      }
     }
 
     body {
@@ -38,9 +73,9 @@
 
     /* ── Layout ── */
     .page {
-      max-width: 860px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 3rem 2rem 5rem;
+      padding: 3rem 2rem 4rem;
     }
 
     /* ── Header / Hero ── */
@@ -64,25 +99,12 @@
     .hero-title {
       color: var(--muted);
       font-size: 14px;
-      font-weight: 400;
       margin-bottom: 1.1rem;
       letter-spacing: 0.01em;
     }
-    .hero-bio {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.75;
-      margin-bottom: 1.2rem;
-    }
-    .hero-bio em {
-      font-style: normal;
-      font-weight: 500;
-    }
-    .hero-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .hero-bio { font-size: 15px; line-height: 1.75; margin-bottom: 0.8rem; }
+    .hero-bio em { font-style: normal; font-weight: 500; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.2rem; }
     .hero-links a {
       display: inline-flex;
       align-items: center;
@@ -91,28 +113,20 @@
       font-weight: 500;
       color: var(--accent);
       background: var(--accent-light);
-      border: 1px solid #c5d8ed;
+      border: 1px solid var(--accent-border);
       border-radius: 20px;
       padding: 4px 12px;
       transition: background 0.15s;
     }
-    .hero-links a:hover { background: #d8eaf8; text-decoration: none; }
+    .hero-links a:hover { background: var(--accent-hover); text-decoration: none; }
     .hero-photo {
       width: 180px;
       height: 180px;
       border-radius: 10px;
-      background: linear-gradient(135deg, #d8e8f4 0%, #c5d8ed 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'EB Garamond', serif;
-      font-size: 3.5rem;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-      flex-shrink: 0;
-      border: 1px solid #c5d8ed;
+      border: 1px solid var(--accent-border);
       overflow: hidden;
     }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* ── Section ── */
     section { margin-bottom: 2.8rem; }
@@ -121,159 +135,105 @@
       font-size: 1.35rem;
       font-weight: 500;
       letter-spacing: -0.01em;
-      color: var(--text);
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.4rem;
       margin-bottom: 1.4rem;
     }
 
-    /* ── Publications ── */
-    .pub-list { display: flex; flex-direction: column; gap: 1.4rem; }
-    .pub {
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    .pub-thumb {
-      width: 110px;
-      height: 75px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-    .pub-thumb svg { width: 52px; height: 52px; }
-    .pub-info {}
-    .pub-title {
-      font-size: 14.5px;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.4;
-      margin-bottom: 3px;
-    }
-    .pub-title a { color: var(--text); }
-    .pub-title a:hover { color: var(--accent); }
-    .pub-authors {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    .pub-authors strong { color: var(--text); font-weight: 500; }
-    .pub-venue {
-      font-size: 13px;
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .pub-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-    .tag {
-      font-size: 11.5px;
-      font-weight: 500;
-      padding: 2px 9px;
-      border-radius: 20px;
-    }
-    .tag-journal { background: #e6f4ec; color: #1a6636; border: 1px solid #b3ddc4; }
-    .tag-conf { background: var(--tag-bg); color: var(--tag-text); border: 1px solid #c5d8ed; }
-    .tag-year { background: #f3f1ec; color: var(--muted); border: 1px solid var(--border); }
-    .pub-links { margin-top: 5px; display: flex; gap: 10px; }
-    .pub-links a { font-size: 12.5px; color: var(--accent); font-weight: 500; }
-
-    /* ── Research Experience ── */
-    .exp-list { display: flex; flex-direction: column; gap: 1.2rem; }
-    .exp-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: start;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-    }
-    .exp-role {
-      font-size: 14.5px;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-    .exp-inst {
-      font-size: 13.5px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .exp-bullets {
-      margin: 0;
-      padding-left: 1.1rem;
-      font-size: 13px;
-      color: var(--faint);
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    .exp-date {
-      font-size: 12.5px;
-      color: var(--faint);
-      white-space: nowrap;
-    }
-
-    /* ── Education ── */
-    .edu-list { display: flex; flex-direction: column; gap: 1.2rem; }
-    .edu-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem;
-      align-items: start;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-    }
-    .edu-degree {
-      font-size: 14.5px;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-    .edu-inst {
-      font-size: 13.5px;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-    .edu-detail {
-      font-size: 13px;
-      color: var(--faint);
-      font-style: italic;
-    }
-    .edu-date {
-      font-size: 12.5px;
-      color: var(--faint);
-      white-space: nowrap;
-    }
-
     /* ── Research Interests ── */
-    .interests {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .interests { display: flex; flex-wrap: wrap; gap: 8px; }
     .interest-pill {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 5px 14px;
       font-size: 13.5px;
-      color: var(--text);
     }
 
     /* ── News ── */
     .news-list { display: flex; flex-direction: column; gap: 0.7rem; }
     .news-item { display: grid; grid-template-columns: 90px 1fr; gap: 1rem; font-size: 14px; }
     .news-date { color: var(--faint); font-size: 13px; padding-top: 1px; }
-    .news-text { color: var(--text); }
-    .news-text a { color: var(--accent); }
+
+    /* ── Cards: experience / education ── */
+    .card-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+    }
+    .card-role { font-size: 14.5px; font-weight: 500; margin-bottom: 2px; }
+    .card-inst { font-size: 13.5px; color: var(--muted); margin-bottom: 6px; }
+    .card-detail { font-size: 13px; color: var(--muted); }
+    .card-bullets {
+      padding-left: 1.1rem;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .card-date { font-size: 12.5px; color: var(--faint); white-space: nowrap; }
+
+    /* ── Publications / projects ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .pub {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+    .thumb {
+      width: 170px;
+      height: 116px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--thumb-bg);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .thumb img, .thumb video { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .thumb.cover img, .thumb.cover video { object-fit: cover; }
+    .thumb .still { display: none; }
+    .thumb-text {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      text-align: center;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem;
+    }
+    .pub-title { font-size: 14.5px; font-weight: 500; line-height: 1.4; margin-bottom: 3px; }
+    .pub-title a { color: var(--text); }
+    .pub-title a:hover { color: var(--accent); }
+    .pub-title .role { font-weight: 400; color: var(--faint); }
+    .pub-authors { font-size: 13px; color: var(--muted); margin-bottom: 3px; }
+    .pub-authors strong { color: var(--text); font-weight: 500; }
+    .pub-venue { font-size: 13px; font-style: italic; color: var(--muted); margin-bottom: 6px; }
+    .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 10px; }
+    .tag { font-size: 11.5px; font-weight: 500; padding: 2px 9px; border-radius: 20px; }
+    .tag-journal { background: var(--journal-bg); color: var(--journal-text); border: 1px solid var(--journal-border); }
+    .tag-conf { background: var(--tag-bg); color: var(--tag-text); border: 1px solid var(--accent-border); }
+    .pub-meta a { font-size: 12.5px; font-weight: 500; }
+
+    /* ── Plain lists: service, awards ── */
+    .plain-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; font-size: 14px; }
+    .plain-list li { display: grid; grid-template-columns: 1fr auto; gap: 1rem; }
+    .plain-list .when { color: var(--faint); font-size: 13px; white-space: nowrap; }
+    .plain-list .note { color: var(--muted); font-size: 13px; }
 
     /* ── Footer ── */
     footer {
@@ -286,11 +246,20 @@
     }
 
     @media (max-width: 640px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-photo { width: 120px; height: 120px; font-size: 2.5rem; order: -1; }
-      .pub { grid-template-columns: 1fr; }
-      .pub-thumb { display: none; }
-      .edu-item { grid-template-columns: 1fr; }
+      .page { padding: 2rem 1rem 3rem; }
+      .hero { grid-template-columns: 1fr; gap: 1.2rem; }
+      .hero-photo { width: 120px; height: 120px; order: -1; }
+      .pub { grid-template-columns: 1fr; gap: 0.6rem; }
+      .thumb { width: 100%; max-width: 320px; height: 170px; }
+      .thumb:has(.thumb-text) { display: none; }
+      .card { grid-template-columns: 1fr; gap: 0.3rem; }
+      .card-date { order: -1; }
+      .news-item { grid-template-columns: 1fr; gap: 0; }
+      .plain-list li { grid-template-columns: 1fr; gap: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .thumb video { display: none; }
+      .thumb .still { display: block; }
     }
   </style>
 </head>
@@ -301,35 +270,42 @@
   <header class="hero">
     <div>
       <h1 class="hero-name">Alaran Muslim<br>Adedamola</h1>
-      <p class="hero-title">Incoming PhD Student · Cyber-Physical Systems · Montanuniversität Leoben, Austria</p>
+      <p class="hero-title">PhD Student · Robot Learning · Montanuniversität Leoben, Austria</p>
       <p class="hero-bio">
-        I am an incoming PhD student at the <em>Chair of Cyber-Physical Systems</em> at Montanuniversität Leoben, supervised by
-        <a href="https://cps.unileoben.ac.at/prof-elmar-rueckert/">Prof. Elmar Rückert</a>.
-        My research lies at the intersection of <em>robot learning</em>, <em>reinforcement learning</em>, and <em>embodied AI</em>,
+        I am a PhD student and doctoral researcher at the <em>Chair of Cyber-Physical Systems</em> at Montanuniversität Leoben,
+        advised by <a href="https://cps.unileoben.ac.at/prof-elmar-rueckert/">Prof. Elmar Rückert</a>.
+        I work on <em>skill learning for humanoid robots</em> (Unitree G1, R1), targeting industrial production and logistics tasks.
+      </p>
+      <p class="hero-bio">
+        More broadly, my research lies at the intersection of <em>robot learning</em>, <em>reinforcement learning</em>, and <em>embodied AI</em>,
         with a focus on dexterous manipulation and generalist robot policies.
-        Previously, I completed my MS in Robotics at Nazarbayev University and conducted research at the
-        Artificial Intelligence for Robotics Lab arm of the Laboratory for Autonomous Systems and Mobile Robotics, University of Zagreb.
+        Before this, I was a junior researcher at the AI for Robotics Lab (FER, University of Zagreb), and I completed my MS in Robotics
+        at Nazarbayev University.
       </p>
       <nav class="hero-links">
         <a href="mailto:adedamolaalaran@gmail.com">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           Email
         </a>
-        <a href="https://scholar.google.com/citations?user=wQWYbuEAAAAJ" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/><path d="M12 14L2.5 8.5M12 14l9.5-5.5"/><path d="M2.5 8.5L12 3l9.5 5.5"/></svg>
+        <a href="assets/Muslim_Alaran_CV.pdf" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          CV
+        </a>
+        <a href="https://scholar.google.com/citations?user=wQWYbuEAAAAJ" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/><path d="M12 14L2.5 8.5M12 14l9.5-5.5"/><path d="M2.5 8.5L12 3l9.5 5.5"/></svg>
           Google Scholar
         </a>
-        <a href="https://github.com/muslim-adedamola" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <a href="https://github.com/muslim-adedamola" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           GitHub
         </a>
-        <a href="https://linkedin.com/in/muslim-alaran" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://linkedin.com/in/muslim-alaran" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
       </nav>
     </div>
-    <div class="hero-photo"><img src="photo.jpg" style="width:100%;height:100%;object-fit:cover;" /></div>
+    <div class="hero-photo"><img src="photo.jpg" alt="Portrait of Muslim Alaran" /></div>
   </header>
 
   <!-- RESEARCH INTERESTS -->
@@ -337,10 +313,11 @@
     <h2 class="section-title">Research Interests</h2>
     <div class="interests">
       <span class="interest-pill">Robot Learning</span>
+      <span class="interest-pill">Humanoid Robots</span>
       <span class="interest-pill">Reinforcement Learning</span>
+      <span class="interest-pill">Imitation Learning</span>
       <span class="interest-pill">Embodied AI</span>
       <span class="interest-pill">Dexterous Manipulation</span>
-      <span class="interest-pill">Imitation Learning</span>
       <span class="interest-pill">Foundation Models for Robotics</span>
       <span class="interest-pill">Visual-Tactile Perception</span>
       <span class="interest-pill">Motion Planning</span>
@@ -352,119 +329,25 @@
     <h2 class="section-title">News</h2>
     <div class="news-list">
       <div class="news-item">
-        <span class="news-date">May 2026</span>
-        <span class="news-text">🎉 Joining the <a href="https://cps.unileoben.ac.at/">Chair of Cyber-Physical Systems</a> at Montanuniversität Leoben as a PhD student under Prof. Elmar Rückert.</span>
+        <span class="news-date">Aug 2026</span>
+        <span>🎉 Started my PhD at the <a href="https://cps.unileoben.ac.at/">Chair of Cyber-Physical Systems</a>, Montanuniversität Leoben, with Prof. Elmar Rückert, working on humanoid skill learning.</span>
       </div>
       <div class="news-item">
         <span class="news-date">May 2026</span>
-        <span class="news-text">Paper on <em>Time and object aware transformer for gesture recognition</em> accepted in <em>Robotics and Autonomous Systems</em>.</span>
+        <span>Paper on <em>time and object aware transformers for gesture recognition</em> accepted in <em>Robotics and Autonomous Systems</em>.</span>
       </div>
       <div class="news-item">
         <span class="news-date">May 2026</span>
-        <span class="news-text">Paper on <em>Spatially Aware Value Fusion for Marine Manipulation</em> accepted to IFAC World Congress 2026.</span>
+        <span>Paper on <em>spatially aware value fusion for marine manipulation</em> accepted to the 23rd IFAC World Congress (Busan).</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">Apr 2025</span>
+        <span>Systematic review of <em>VEP-based brain-computer interfaces in gaming</em> published in <em>IEEE Access</em>.</span>
       </div>
       <div class="news-item">
         <span class="news-date">Mar 2025</span>
-        <span class="news-text">Started as Researcher at the AI for Robotics Lab, University of Zagreb, working on embodied AI and manipulation.</span>
+        <span>Joined the AI for Robotics Lab, FER, University of Zagreb, as a junior researcher working on robot manipulation.</span>
       </div>
-      <div class="news-item">
-        <span class="news-date">April 2025</span>
-        <span class="news-text">Paper on <em>VEP-based Brain-Computer Interfaces in Gaming</em> published in <em>IEEE Access</em>.</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section>
-    <h2 class="section-title">Education</h2>
-    <div class="edu-list">
-
-      <div class="edu-item">
-        <div>
-          <p class="edu-degree">PhD in Cyber-Physical Systems <span style="font-weight:400;color:var(--faint);">(incoming)</span></p>
-          <p class="edu-inst">Montanuniversität Leoben · Leoben, Austria</p>
-          <p class="edu-detail">Supervisor: <a href="https://cps.unileoben.ac.at/prof-elmar-rueckert/">Prof. Elmar Rückert</a> · Chair of Cyber-Physical Systems</p>
-        </div>
-        <span class="edu-date">2025 – present</span>
-      </div>
-
-      <div class="edu-item">
-        <div>
-          <p class="edu-degree">MS in Robotics</p>
-          <p class="edu-inst">Nazarbayev University · Astana, Kazakhstan</p>
-          <p class="edu-detail">GPA 3.7/4.0 · Dean's Honor List (Spring & Fall 2023) · Abay Kunanbayev Scholar<br>
-          Thesis: Enhanced Object Recognition in Hemispherical Images using Data Augmentation and Synthetic Image Integration<br>
-          Advisor: Prof. Huseyin Atakan Varol</p>
-        </div>
-        <span class="edu-date">2022 – 2024</span>
-      </div>
-
-      <div class="edu-item">
-        <div>
-          <p class="edu-degree">BEng in Electrical & Electronics Engineering</p>
-          <p class="edu-inst">University of Ilorin · Ilorin, Nigeria</p>
-          <p class="edu-detail">First Class Honors · Top 1% of graduating cohort<br>
-          Thesis: Attendance Monitoring System using RFID and Fingerprint</p>
-        </div>
-        <span class="edu-date">2015 – 2021</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- RESEARCH EXPERIENCE -->
-  <section>
-    <h2 class="section-title">Research Experience</h2>
-    <div class="exp-list">
-
-      <div class="exp-item">
-        <div>
-          <p class="exp-role">Researcher — AI for Robotics Lab</p>
-          <p class="exp-inst">University of Zagreb · Zagreb, Croatia</p>
-          <ul class="exp-bullets">
-            <li>Conducting research in embodied AI with a focus on manipulation.</li>
-            <li>Developed and deployed reinforcement and imitation learning policies on a Kinova Gen3 robot, integrating perception and control pipelines.</li>
-          </ul>
-        </div>
-        <span class="exp-date">Mar 2025 – present</span>
-      </div>
-
-      <div class="exp-item">
-        <div>
-          <p class="exp-role">Research Assistant — Robot Control and Learning Lab</p>
-          <p class="exp-inst">Nazarbayev University · Astana, Kazakhstan</p>
-          <ul class="exp-bullets">
-            <li>Conducted research on reinforcement learning applied to motion planning of a 7-DOF Kinova Gen3 robot in obstacle-filled environments.</li>
-            <li>Developed a safety-critical RL framework for human–robot collaboration, enforcing Speed and Separation Monitoring constraints within PPO-based motion planning.</li>
-          </ul>
-        </div>
-        <span class="exp-date">Aug 2024 – Feb 2025</span>
-      </div>
-
-      <div class="exp-item">
-        <div>
-          <p class="exp-role">Research Assistant — Institute of Smart Systems and Artificial Intelligence</p>
-          <p class="exp-inst">Nazarbayev University · Astana, Kazakhstan</p>
-          <ul class="exp-bullets">
-            <li>Created a synthetic dataset of 5.1 million images using NVIDIA Omniverse to improve object recognition models.</li>
-            <li>Collected hemispherical camera data and built a benchmark dataset of 1,000 fisheye images.</li>
-            <li>Trained YOLO models for object recognition in fisheye imagery.</li>
-          </ul>
-        </div>
-        <span class="exp-date">Jan 2023 – Jul 2024</span>
-      </div>
-
-      <div class="exp-item">
-        <div>
-          <p class="exp-role">Undergraduate Research Assistant</p>
-          <p class="exp-inst">Dept. of Electrical & Electronics Engineering, University of Ilorin · Nigeria</p>
-          <ul class="exp-bullets">
-            <li>Reviewed literature and contributed to the design of a multifactor student attendance system using fingerprint biometrics and RFID.</li>
-          </ul>
-        </div>
-        <span class="exp-date">Jan 2020 – Mar 2021</span>
-      </div>
-
     </div>
   </section>
 
@@ -473,222 +356,260 @@
     <h2 class="section-title">Publications</h2>
     <div class="pub-list">
 
-      <!-- J1 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <rect x="10" y="14" width="32" height="4" rx="2" fill="#c5d8ed"/>
-            <rect x="10" y="22" width="24" height="3" rx="1.5" fill="#d8e8f4"/>
-            <rect x="10" y="28" width="28" height="3" rx="1.5" fill="#d8e8f4"/>
-            <circle cx="38" cy="38" r="7" fill="#2a5c8a" opacity="0.15"/>
-            <path d="M34 38 L38 34 L42 38" stroke="#2a5c8a" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M38 34 L38 42" stroke="#2a5c8a" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1016/j.robot.2026.105518" target="_blank">A Time and Object Aware Transformer-Based Method for Structured Hierarchical Gesture Recognition</a>
-          </p>
+        <div class="thumb"><div class="thumb-text">Robotics and<br>Autonomous Systems</div></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1016/j.robot.2026.105518" target="_blank" rel="noopener">A Time and Object Aware Transformer-Based Method for Structured Hierarchical Gesture Recognition</a></p>
           <p class="pub-authors">A. Papanikolaou, V. Sivtsov, <strong>M. Alaran</strong>, D. Shkolnik, E. Zereik, I. Markovic, I. Petrovic, F. Bonsignorio</p>
-          <p class="pub-venue">Robotics and Autonomous Systems, 2026</p>
-          <div class="pub-tags">
-            <span class="tag tag-journal">Journal</span>
-            <span class="tag tag-year">2026</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.robot.2026.105518" target="_blank">DOI</a>
-          </div>
+          <p class="pub-venue">Robotics and Autonomous Systems, Art. no. 105518, 2026</p>
+          <div class="pub-meta"><span class="tag tag-journal">Journal</span><a href="https://doi.org/10.1016/j.robot.2026.105518" target="_blank" rel="noopener">DOI</a></div>
         </div>
       </div>
 
-      <!-- C1 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <path d="M10 38 Q18 20 26 28 Q34 36 42 14" stroke="#2a5c8a" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <circle cx="26" cy="28" r="3" fill="#2a5c8a" opacity="0.4"/>
-            <rect x="10" y="12" width="18" height="3" rx="1.5" fill="#c5d8ed"/>
-          </svg>
-        </div>
-        <div class="pub-info">
+        <div class="thumb"><img src="assets/pubs/safv.jpg" alt="Diagram of spatially aware value fusion over decomposed value heads" loading="lazy" /></div>
+        <div>
           <p class="pub-title">Spatially Aware Value Fusion in Decomposed Reward Architectures for Marine Manipulation</p>
           <p class="pub-authors">V. Sivtsov, <strong>M. Alaran</strong>, D. Shkolnik, A. Papanikolaou, I. Markovic, E. Zereik, I. Petrovic, F. Bonsignorio</p>
-          <p class="pub-venue">IFAC World Congress, 2026</p>
-          <div class="pub-tags">
-            <span class="tag tag-conf">Conference</span>
-            <span class="tag tag-year">2026</span>
-          </div>
+          <p class="pub-venue">23rd IFAC World Congress, Busan, Republic of Korea, 2026</p>
+          <div class="pub-meta"><span class="tag tag-conf">Conference</span></div>
         </div>
       </div>
 
-      <!-- J2 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <ellipse cx="26" cy="26" rx="10" ry="7" stroke="#2a5c8a" stroke-width="1.5" fill="none" opacity="0.5"/>
-            <circle cx="26" cy="26" r="3" fill="#2a5c8a" opacity="0.35"/>
-            <path d="M16 18 Q26 10 36 18" stroke="#2a5c8a" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.4"/>
-            <path d="M16 34 Q26 42 36 34" stroke="#2a5c8a" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.4"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1109/ACCESS.2025.3564328" target="_blank">Neurotechnology in Gaming: A Systematic Review of Visual Evoked Potential-Based Brain-Computer Interfaces</a>
-          </p>
+        <div class="thumb"><img src="assets/pubs/vep.jpg" alt="Schematic of a VEP-based brain-computer interface for video games" loading="lazy" /></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1109/ACCESS.2025.3564328" target="_blank" rel="noopener">Neurotechnology in Gaming: A Systematic Review of Visual Evoked Potential-Based Brain-Computer Interfaces</a></p>
           <p class="pub-authors">A. Keutayeva, C. J. Nwachukwu, <strong>M. Alaran</strong>, Z. Otarbay, B. Abibullaev</p>
           <p class="pub-venue">IEEE Access, vol. 13, pp. 74944–74966, 2025</p>
-          <div class="pub-tags">
-            <span class="tag tag-journal">Journal</span>
-            <span class="tag tag-year">2025</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/ACCESS.2025.3564328" target="_blank">DOI</a>
-          </div>
+          <div class="pub-meta"><span class="tag tag-journal">Journal</span><a href="https://doi.org/10.1109/ACCESS.2025.3564328" target="_blank" rel="noopener">DOI</a></div>
         </div>
       </div>
 
-      <!-- J3 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <rect x="14" y="14" width="10" height="10" rx="2" fill="#2a5c8a" opacity="0.2"/>
-            <rect x="28" y="14" width="10" height="10" rx="2" fill="#2a5c8a" opacity="0.35"/>
-            <rect x="14" y="28" width="10" height="10" rx="2" fill="#2a5c8a" opacity="0.35"/>
-            <rect x="28" y="28" width="10" height="10" rx="2" fill="#2a5c8a" opacity="0.5"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1177/20552076241305915" target="_blank">Challenges and Opportunities of Artificial Intelligence in African Health Space</a>
-          </p>
+        <div class="thumb"><div class="thumb-text">Digital Health<br>Commentary</div></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1177/20552076241305915" target="_blank" rel="noopener">Challenges and Opportunities of Artificial Intelligence in African Health Space</a></p>
           <p class="pub-authors"><strong>M. A. Alaran</strong>, S. K. Lawal, M. H. Jiya, S. A. Egya, M. M. Ahmed, A. Abdulsalam, U. A. Haruna, M. K. Musa, D. E. Lucero-Prisno III</p>
-          <p class="pub-venue">Digital Health Journal, 2025</p>
-          <div class="pub-tags">
-            <span class="tag tag-journal">Journal</span>
-            <span class="tag tag-year">2025</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1177/20552076241305915" target="_blank">DOI</a>
-          </div>
+          <p class="pub-venue">Digital Health, vol. 11, Art. no. 20552076241305915, 2025</p>
+          <div class="pub-meta"><span class="tag tag-journal">Journal</span><a href="https://doi.org/10.1177/20552076241305915" target="_blank" rel="noopener">DOI</a></div>
         </div>
       </div>
 
-      <!-- C2 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <path d="M12 40 L20 28 L28 33 L36 18 L44 22" stroke="#2a5c8a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="20" cy="28" r="2.5" fill="#2a5c8a" opacity="0.5"/>
-            <circle cx="36" cy="18" r="2.5" fill="#2a5c8a" opacity="0.5"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1109/SSD64182.2025.10989967" target="_blank">APO-Optimized ARX-Based System Identification of a Ship Maneuvering System</a>
-          </p>
+        <div class="thumb"><img src="assets/pubs/apo.jpg" alt="Ship motion response plots" loading="lazy" /></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1109/SSD64182.2025.10989967" target="_blank" rel="noopener">APO-Optimized ARX-Based System Identification of a Ship Maneuvering System</a></p>
           <p class="pub-authors">F. Olanrewaju, M. Shafiullah, M. Al-Dhaifallah, <strong>M. Alaran</strong></p>
-          <p class="pub-venue">IEEE SSD 2025, Monastir, Tunisia</p>
-          <div class="pub-tags">
-            <span class="tag tag-conf">Conference</span>
-            <span class="tag tag-year">2025</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/SSD64182.2025.10989967" target="_blank">DOI</a>
-          </div>
+          <p class="pub-venue">IEEE 22nd International Multi-Conference on Systems, Signals &amp; Devices (SSD), Monastir, Tunisia, 2025</p>
+          <div class="pub-meta"><span class="tag tag-conf">Conference</span><a href="https://doi.org/10.1109/SSD64182.2025.10989967" target="_blank" rel="noopener">DOI</a></div>
         </div>
       </div>
 
-      <!-- C3 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <circle cx="26" cy="26" r="12" stroke="#2a5c8a" stroke-width="1.5" fill="none" opacity="0.35"/>
-            <circle cx="26" cy="26" r="6" stroke="#2a5c8a" stroke-width="1.5" fill="none" opacity="0.55"/>
-            <circle cx="26" cy="26" r="2" fill="#2a5c8a" opacity="0.7"/>
-            <line x1="14" y1="26" x2="38" y2="26" stroke="#2a5c8a" stroke-width="1" opacity="0.3"/>
-            <line x1="26" y1="14" x2="26" y2="38" stroke="#2a5c8a" stroke-width="1" opacity="0.3"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1109/IECON55916.2024.10905287" target="_blank">Field of View Invariant Object Recognition Using Non-Linear Transformation Augmentation</a>
-          </p>
+        <div class="thumb"><img src="assets/pubs/fov.jpg" alt="Perspective images transformed into fisheye views" loading="lazy" /></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1109/IECON55916.2024.10905287" target="_blank" rel="noopener">Field of View Invariant Object Recognition Using Non-Linear Transformation Augmentation</a></p>
           <p class="pub-authors"><strong>M. Alaran</strong>, Z. Balgabekova, H. A. Varol</p>
-          <p class="pub-venue">IECON 2024, Chicago, IL, USA</p>
-          <div class="pub-tags">
-            <span class="tag tag-conf">Conference</span>
-            <span class="tag tag-year">2024</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/IECON55916.2024.10905287" target="_blank">DOI</a>
-          </div>
+          <p class="pub-venue">IECON 2024, 50th Annual Conference of the IEEE Industrial Electronics Society, Chicago, IL, USA</p>
+          <div class="pub-meta"><span class="tag tag-conf">Conference</span><a href="https://doi.org/10.1109/IECON55916.2024.10905287" target="_blank" rel="noopener">DOI</a><a href="https://github.com/muslim-adedamola/wide-fov-dataset-toolkit" target="_blank" rel="noopener">Code</a></div>
         </div>
       </div>
 
-      <!-- C4 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <rect x="20" y="14" width="12" height="14" rx="2" fill="#2a5c8a" opacity="0.25"/>
-            <circle cx="26" cy="34" r="6" fill="none" stroke="#2a5c8a" stroke-width="1.5" opacity="0.5"/>
-            <line x1="26" y1="28" x2="26" y2="40" stroke="#2a5c8a" stroke-width="1.2" opacity="0.35"/>
-            <line x1="20" y1="34" x2="32" y2="34" stroke="#2a5c8a" stroke-width="1.2" opacity="0.35"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1109/M2VIP62491.2024.10746213" target="_blank">Cloud-Integrated Navigation System for Scalable Autonomous Ground Robots</a>
-          </p>
+        <div class="thumb"><img src="assets/pubs/cloud.jpg" alt="3D model of the autonomous ground robot" loading="lazy" /></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1109/M2VIP62491.2024.10746213" target="_blank" rel="noopener">Cloud-Integrated Navigation System for Scalable Autonomous Ground Robots</a></p>
           <p class="pub-authors">U. Sharipov, S. Kasenov, <strong>M. Alaran</strong>, A. Askhatova, Y. Orynbay, P. Jamwal</p>
-          <p class="pub-venue">M2VIP 2024, Leeds, United Kingdom</p>
-          <div class="pub-tags">
-            <span class="tag tag-conf">Conference</span>
-            <span class="tag tag-year">2024</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/M2VIP62491.2024.10746213" target="_blank">DOI</a>
-          </div>
+          <p class="pub-venue">30th International Conference on Mechatronics and Machine Vision in Practice (M2VIP), Leeds, United Kingdom, 2024</p>
+          <div class="pub-meta"><span class="tag tag-conf">Conference</span><a href="https://doi.org/10.1109/M2VIP62491.2024.10746213" target="_blank" rel="noopener">DOI</a></div>
         </div>
       </div>
 
-      <!-- C5 -->
       <div class="pub">
-        <div class="pub-thumb">
-          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="52" height="52" rx="6" fill="#eef3f8"/>
-            <rect x="10" y="20" width="32" height="18" rx="3" fill="none" stroke="#2a5c8a" stroke-width="1.5" opacity="0.4"/>
-            <rect x="16" y="14" width="20" height="10" rx="2" fill="#2a5c8a" opacity="0.18"/>
-            <circle cx="26" cy="29" r="4" fill="#2a5c8a" opacity="0.35"/>
-          </svg>
-        </div>
-        <div class="pub-info">
-          <p class="pub-title">
-            <a href="https://doi.org/10.1109/IECON51785.2023.10311869" target="_blank">A Data-Centric Approach for Object Recognition in Hemispherical Camera Images</a>
-          </p>
+        <div class="thumb cover"><img src="assets/pubs/cohi.jpg" alt="Annotated hemispherical camera image" loading="lazy" /></div>
+        <div>
+          <p class="pub-title"><a href="https://doi.org/10.1109/IECON51785.2023.10311869" target="_blank" rel="noopener">A Data-Centric Approach for Object Recognition in Hemispherical Camera Images</a></p>
           <p class="pub-authors">Z. Balgabekova, <strong>M. Alaran</strong>, H. A. Varol</p>
-          <p class="pub-venue">IECON 2023, Singapore</p>
-          <div class="pub-tags">
-            <span class="tag tag-conf">Conference</span>
-            <span class="tag tag-year">2023</span>
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1109/IECON51785.2023.10311869" target="_blank">DOI</a>
-          </div>
+          <p class="pub-venue">IECON 2023, 49th Annual Conference of the IEEE Industrial Electronics Society, Singapore</p>
+          <div class="pub-meta"><span class="tag tag-conf">Conference</span><a href="https://doi.org/10.1109/IECON51785.2023.10311869" target="_blank" rel="noopener">DOI</a></div>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- OPEN SOURCE -->
+  <section>
+    <h2 class="section-title">Open Source</h2>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="thumb cover">
+          <video src="assets/projects/octo.mp4" poster="assets/projects/octo.jpg" autoplay muted loop playsinline aria-label="Kinova Gen3 picking up a bottle with the fine-tuned Octo policy"></video>
+          <img class="still" src="assets/projects/octo.jpg" alt="Kinova Gen3 grasping a bottle" />
+        </div>
+        <div>
+          <p class="pub-title"><a href="https://github.com/muslim-adedamola/finetune-octo-kinova-hybrid" target="_blank" rel="noopener">finetune-octo-kinova-hybrid</a></p>
+          <p class="pub-authors">Fine-tuning and deploying Octo, a generalist robot policy, on a Kinova Gen3 for goal-image-conditioned bottle pick-and-lift from ~110 demonstrations, with a hybrid action head.</p>
+          <p class="card-detail">Released pipeline (v1.0.0): demonstration collection, hand-eye calibration, TFDS/RLDS conversion, training, offline evaluation, and live deployment around a latency-aware receding-horizon controller.</p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="thumb cover">
+          <video src="assets/projects/roboplan.mp4" poster="assets/projects/roboplan.jpg" autoplay muted loop playsinline aria-label="UR5 arm tracking a Cartesian path in roboplan"></video>
+          <img class="still" src="assets/projects/roboplan.jpg" alt="UR5 arm tracking a Cartesian path" />
+        </div>
+        <div>
+          <p class="pub-title"><a href="https://github.com/open-planning/roboplan" target="_blank" rel="noopener">open-planning/roboplan</a> <span class="role">· contributor</span></p>
+          <p class="pub-authors">Pinocchio-based robot motion planning library.</p>
+          <p class="card-detail"><a href="https://github.com/open-planning/roboplan/pulls?q=is%3Apr+is%3Amerged+author%3Amuslim-adedamola" target="_blank" rel="noopener">Six merged pull requests</a> adding dual end-effector support, a Cartesian trajectory type, acceleration and jerk limits, Jacobian base-frame support, and keyboard teleoperation.</p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="thumb cover"><img src="assets/projects/widefov.jpg" alt="Images transformed into fisheye views" loading="lazy" /></div>
+        <div>
+          <p class="pub-title"><a href="https://github.com/muslim-adedamola/wide-fov-dataset-toolkit" target="_blank" rel="noopener">wide-fov-dataset-toolkit</a></p>
+          <p class="pub-authors">Fisheye dataset generation for object detection.</p>
+          <p class="card-detail">Converts perspective object-detection datasets (COCO, Objects365) into fisheye and wide-FoV training data via eight lens-distortion transforms with matching bounding-box remapping; generalizes the IECON 2024 pipeline into a pip-installable, tested package.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section>
+    <h2 class="section-title">Research Experience</h2>
+    <div class="card-list">
+
+      <div class="card">
+        <div>
+          <p class="card-role">Doctoral Researcher — Chair of Cyber-Physical Systems</p>
+          <p class="card-inst">Montanuniversität Leoben · Leoben, Austria</p>
+          <ul class="card-bullets">
+            <li>Researching skill learning for humanoid robots (Unitree G1, R1) targeting industrial production and logistics tasks.</li>
+          </ul>
+        </div>
+        <span class="card-date">Aug 2026 – present</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <p class="card-role">Junior Researcher — Artificial Intelligence for Robotics Lab</p>
+          <p class="card-inst">FER, University of Zagreb · Zagreb, Croatia</p>
+          <ul class="card-bullets">
+            <li>Developed and deployed imitation and reinforcement learning policies for manipulation on Kinova Gen3 arms.</li>
+            <li>Fine-tuned Octo, a generalist robot policy, for goal-image-conditioned bottle pick-and-lift from ~110 demonstrations, using a hybrid action head.</li>
+            <li>Built the full real-robot pipeline (demonstration collection, hand-eye calibration, TFDS/RLDS conversion, offline evaluation, live deployment) around a latency-aware receding-horizon controller; released open-source (v1.0.0).</li>
+            <li>Owned sim-to-real transfer for a decomposed-reward RL architecture with spatially aware value fusion for marine manipulation.</li>
+          </ul>
+        </div>
+        <span class="card-date">Mar 2025 – Jul 2026</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <p class="card-role">Research Assistant — Robot Control and Learning Lab</p>
+          <p class="card-inst">Nazarbayev University · Astana, Kazakhstan</p>
+          <ul class="card-bullets">
+            <li>Built a safety-critical reinforcement learning framework for human–robot collaboration, enforcing Speed and Separation Monitoring constraints in PPO-based motion planning on a 7-DoF Kinova Gen3.</li>
+            <li>Prototyped obstacle-avoidance groundwork in MuJoCo, training the arm to reach goals among static and moving obstacles using reward shaping and curriculum learning.</li>
+          </ul>
+        </div>
+        <span class="card-date">Aug 2024 – Feb 2025</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <p class="card-role">Research Assistant — Institute of Smart Systems and Artificial Intelligence</p>
+          <p class="card-inst">Nazarbayev University · Astana, Kazakhstan</p>
+          <ul class="card-bullets">
+            <li>Built a 5.1 million-image fisheye dataset using non-linear geometric mapping and trained YOLO models on it for object recognition.</li>
+            <li>Generated synthetic training data for object recognition using NVIDIA Omniverse.</li>
+            <li>Collected hemispherical-camera images into a 1,000-image fisheye benchmark for evaluation.</li>
+          </ul>
+        </div>
+        <span class="card-date">Jan 2023 – Jul 2024</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <p class="card-role">Undergraduate Research Assistant</p>
+          <p class="card-inst">Dept. of Electrical &amp; Electronics Engineering, University of Ilorin · Nigeria</p>
+          <ul class="card-bullets">
+            <li>Reviewed literature and contributed to the design of a multifactor student attendance system using fingerprint biometrics and RFID.</li>
+          </ul>
+        </div>
+        <span class="card-date">Jan 2020 – Mar 2021</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2 class="section-title">Education</h2>
+    <div class="card-list">
+
+      <div class="card">
+        <div>
+          <p class="card-role">PhD in Robot Learning</p>
+          <p class="card-inst">Montanuniversität Leoben · Leoben, Austria</p>
+          <p class="card-detail">Advisor: <a href="https://cps.unileoben.ac.at/prof-elmar-rueckert/">Prof. Elmar Rückert</a> · Chair of Cyber-Physical Systems</p>
+        </div>
+        <span class="card-date">Aug 2026 – expected 2030</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <p class="card-role">MS in Robotics</p>
+          <p class="card-inst">Nazarbayev University · Astana, Kazakhstan</p>
+          <p class="card-detail">GPA 3.7/4.0 · Dean's Honor List (Spring &amp; Fall 2023) · Abay Kunanbayev Scholar<br>
+          Thesis: Enhanced Object Recognition in Hemispherical Images using Data Augmentation and Synthetic Image Integration<br>
+          Advisor: Prof. Huseyin Atakan Varol</p>
+        </div>
+        <span class="card-date">Aug 2022 – Jun 2024</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <p class="card-role">BEng in Electrical &amp; Electronics Engineering</p>
+          <p class="card-inst">University of Ilorin · Ilorin, Nigeria</p>
+          <p class="card-detail">First Class Honors · Top 1% of graduating cohort<br>
+          Thesis: Attendance Monitoring System using RFID and Fingerprint<br>
+          Advisor: Dr. I.O.A. Omeiza</p>
+        </div>
+        <span class="card-date">Oct 2015 – Aug 2021</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE & ACTIVITIES -->
+  <section>
+    <h2 class="section-title">Service &amp; Activities</h2>
+    <ul class="plain-list">
+      <li><span>Reviewer: ICRA 2027, IROS 2025, IECON 2023</span><span class="when"></span></li>
+      <li><span>Automation Team Lead, NU Rover, Nazarbayev University <span class="note">· autonomous navigation, object detection, and motion control for the University Rover Challenge</span></span><span class="when">2023 – 2024</span></li>
+      <li><span>Oxford Machine Learning Summer School <span class="note">· representation learning for vision, language, and multi-modal data</span></span><span class="when">2024</span></li>
+      <li><span>Teaching Assistant, Dept. of Robotics, Nazarbayev University <span class="note">· Electrical and Electronic Circuits II; Microcontrollers with Lab</span></span><span class="when">2023</span></li>
+    </ul>
+  </section>
+
+  <!-- AWARDS -->
+  <section>
+    <h2 class="section-title">Awards &amp; Honors</h2>
+    <ul class="plain-list">
+      <li><span>Abay Kunanbayev Scholarship, Nazarbayev University <span class="note">· for outstanding international graduate students</span></span><span class="when">2022 – 2024</span></li>
+      <li><span>Award of Appreciation for Excellence in Leadership and Community Building <span class="note">· International Students and Scholars Services, Nazarbayev University</span></span><span class="when">2024</span></li>
+    </ul>
+  </section>
+
   <footer>
-    <p>Website template borrowed from <a href="https://jonbarron.info" target="_blank">Jon Barron</a>.</p>
+    <p>Last updated October 2026 · Originally based on <a href="https://jonbarron.info" target="_blank" rel="noopener">Jon Barron's</a> template.</p>
   </footer>
 
 </div>
