@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 232" role="img" aria-label="Illustration: top view of a ship with its four identified motions, surge, sway, roll and yaw">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2a5c8a"/>
+    </marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2a7a4a"/>
+    </marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#c0504d"/>
+    </marker>
+  </defs>
+  <rect width="340" height="232" fill="#eaf2f9"/>
+  <!-- waves -->
+  <g fill="none" stroke="#c9dcec" stroke-width="2" stroke-linecap="round">
+    <path d="M14 30 q12 -8 24 0 t24 0 t24 0 t24 0"/>
+    <path d="M214 204 q12 -8 24 0 t24 0 t24 0 t24 0"/>
+    <path d="M20 200 q12 -8 24 0 t24 0 t24 0"/>
+    <path d="M230 26 q12 -8 24 0 t24 0 t24 0"/>
+  </g>
+  <!-- hull, top view, bow to the right -->
+  <path d="M70 92 H218 Q272 92 296 116 Q272 140 218 140 H70 Q60 140 60 130 V102 Q60 92 70 92 z" fill="#ffffff" stroke="#1e4a72" stroke-width="2.4"/>
+  <rect x="96" y="102" width="62" height="28" rx="4" fill="#d8e6f3" stroke="#1e4a72" stroke-width="1.6"/>
+  <line x1="60" y1="116" x2="296" y2="116" stroke="#9db8d3" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <!-- surge u -->
+  <line x1="236" y1="62" x2="292" y2="62" stroke="#2a5c8a" stroke-width="2.6" marker-end="url(#ah)"/>
+  <text x="300" y="67" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#1e4a72">u</text>
+  <!-- sway v -->
+  <line x1="180" y1="150" x2="180" y2="194" stroke="#2a5c8a" stroke-width="2.6" marker-end="url(#ah)"/>
+  <text x="194" y="186" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#1e4a72">v</text>
+  <!-- yaw r: arc around the centre -->
+  <path d="M112 162 A58 58 0 0 1 64 150" fill="none" stroke="#2a7a4a" stroke-width="2.6" marker-end="url(#ahg)"/>
+  <text x="72" y="182" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#2a7a4a">r</text>
+  <!-- roll p: arc about the long axis, at the stern -->
+  <path d="M44 96 A14 22 0 1 0 44 136" fill="none" stroke="#c0504d" stroke-width="2.6" marker-end="url(#ahr)"/>
+  <text x="18" y="88" font-family="Georgia, serif" font-style="italic" font-size="17" fill="#c0504d">p</text>
+</svg>
